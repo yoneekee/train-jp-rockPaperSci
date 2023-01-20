@@ -53,7 +53,11 @@ for (let i = 0; i < playerItems.length; i++) {
       //비겼을때
       appendItem("draw", "D");
       drawCount++;
-    } else if ((i === 0 && num === 2) || (i === 1 && num === 0) || (i === 2 && num === 1)) {
+    } else if (
+      (i === 0 && num === 2) ||
+      (i === 1 && num === 0) ||
+      (i === 2 && num === 1)
+    ) {
       //이긴경우
       appendItem("win", "W");
       winCount++;
@@ -77,7 +81,9 @@ for (let i = 0; i < playerItems.length; i++) {
         console.log("완전 비김");
         msg.textContent = "YOU DRAW!!!";
       }
-      cover.classList.add("on");
+      setTimeout(() => {
+        cover.classList.add("on");
+      }, 500);
     }
   });
 }
